@@ -1,4 +1,4 @@
-import { brainwave } from "../assets";
+import { logo } from "../assets";
 import Button from "./Button";
 
 const Header = () => {
@@ -10,13 +10,21 @@ const Header = () => {
     window.parent.postMessage({ action: "navigate", path: "/login" }, "*");
   };
 
+  const handleLogoClick = () => {
+    window.parent.postMessage({ action: "navigate", path: "/" }, "*");
+  };
+
   return (
     <div
       className={`fixed top-0 left-0 w-full z-50 border-b border-n-6 lg:bg-n-8/50 lg:backdrop-blur-sm pt-2 pb-2`}
     >
-      <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
-        <a className="block w-[12rem] xl:mr-8" href="#hero">
-          <img src={brainwave} width={190} height={40} alt="Brainwave" />
+      <div className="flex items-center px-5">
+        <a
+          className="block w-[12rem] xl:mr-8"
+          href="#hero"
+          onClick={handleLogoClick}
+        >
+          <img src={logo} width={190} height={40} alt="Brainwave" />
         </a>
         <div className="flex flex-grow justify-end items-center">
           <a
